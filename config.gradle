@@ -1,0 +1,30 @@
+//添加多个自定义属性，可以通过ext代码块
+
+ext {
+    username = "zhangsan"
+    //生成/开发环境（正式/测试）
+    isRelease = true
+//建立Map存储，对象名、key都可以自定义，groovy糖果语法，非常灵活
+    androidId = [
+            compileSdkVersion: 28,
+            buildToolsVersion: "29.0.1",
+            minSdkVersion    : 21,
+            targetSdkVersion : 28,
+            versionCode      : 1,
+            versionName      : "1.0"
+    ]
+    appId = [
+            app    : "com.tianzhuan.net_moduler_gradle",
+            library    : "com.tianzhuan.library"
+    ]
+    //生成/开发环境url
+    url = [
+            "debug":"https:11.22.33/debug",
+            "release":"https:11.22.33/release",
+    ]
+    supportLibrary = "28.0.0"
+    dependencies = [
+            appcompat:"com.android.support:appcompat-v7:${supportLibrary}",
+            constraint :"com.android.support.constraint:constraint-layout:1.1.3"
+    ]
+}
